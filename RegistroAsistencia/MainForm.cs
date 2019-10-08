@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RegistroAsistencia.UI.Consultas;
+using RegistroAsistencia.UI.Registros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,18 @@ namespace RegistroAsistencia
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        private void RegistrarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rAsistencia asistencia = new rAsistencia();
+            asistencia.Show();
+        }
+
+        private void ConsultarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cAsistencia asistencia = new cAsistencia();
+            asistencia.Show();
         }
     }
 }

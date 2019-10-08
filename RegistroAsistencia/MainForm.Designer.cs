@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +56,13 @@
             this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
+            // registrarAsistenciaToolStripMenuItem
+            // 
+            this.registrarAsistenciaToolStripMenuItem.Name = "registrarAsistenciaToolStripMenuItem";
+            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarAsistenciaToolStripMenuItem.Text = "Registrar Asistencia";
+            this.registrarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarAsistenciaToolStripMenuItem_Click);
+            // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -64,17 +71,12 @@
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
             // 
-            // registrarAsistenciaToolStripMenuItem
-            // 
-            this.registrarAsistenciaToolStripMenuItem.Name = "registrarAsistenciaToolStripMenuItem";
-            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.registrarAsistenciaToolStripMenuItem.Text = "Registrar Asistencia";
-            // 
             // consultarAsistenciaToolStripMenuItem
             // 
             this.consultarAsistenciaToolStripMenuItem.Name = "consultarAsistenciaToolStripMenuItem";
             this.consultarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.consultarAsistenciaToolStripMenuItem.Text = "Consultar Asistencia";
+            this.consultarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarAsistenciaToolStripMenuItem_Click);
             // 
             // MainForm
             // 

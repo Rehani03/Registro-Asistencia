@@ -36,18 +36,20 @@
             this.Fechalabel = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Estudiantelabel = new System.Windows.Forms.Label();
-            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
-            this.PresentecheckBox = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
+            this.PresentecheckBox = new System.Windows.Forms.CheckBox();
+            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
+            this.Estudiantelabel = new System.Windows.Forms.Label();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Gurdarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.AgregarAsignaturabutton = new System.Windows.Forms.Button();
-            this.Agregarbutton = new System.Windows.Forms.Button();
-            this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Cantidadlabel = new System.Windows.Forms.Label();
+            this.CantidadtextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIDnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -121,22 +123,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asistencia";
             // 
-            // Estudiantelabel
+            // dataGridView1
             // 
-            this.Estudiantelabel.AutoSize = true;
-            this.Estudiantelabel.Location = new System.Drawing.Point(9, 31);
-            this.Estudiantelabel.Name = "Estudiantelabel";
-            this.Estudiantelabel.Size = new System.Drawing.Size(57, 13);
-            this.Estudiantelabel.TabIndex = 0;
-            this.Estudiantelabel.Text = "Estudiante";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(400, 172);
+            this.dataGridView1.TabIndex = 5;
             // 
-            // EstudiantecomboBox
+            // Agregarbutton
             // 
-            this.EstudiantecomboBox.FormattingEnabled = true;
-            this.EstudiantecomboBox.Location = new System.Drawing.Point(12, 48);
-            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
-            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
-            this.EstudiantecomboBox.TabIndex = 1;
+            this.Agregarbutton.Image = global::RegistroAsistencia.Properties.Resources.agregarData_opt;
+            this.Agregarbutton.Location = new System.Drawing.Point(352, 35);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(60, 36);
+            this.Agregarbutton.TabIndex = 4;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            // 
+            // AgregarEstudiantebutton
+            // 
+            this.AgregarEstudiantebutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
+            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(154, 48);
+            this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
+            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(43, 23);
+            this.AgregarEstudiantebutton.TabIndex = 3;
+            this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
             // 
             // PresentecheckBox
             // 
@@ -148,19 +159,28 @@
             this.PresentecheckBox.Text = "Presente";
             this.PresentecheckBox.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // EstudiantecomboBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(400, 172);
-            this.dataGridView1.TabIndex = 5;
+            this.EstudiantecomboBox.FormattingEnabled = true;
+            this.EstudiantecomboBox.Location = new System.Drawing.Point(12, 48);
+            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
+            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
+            this.EstudiantecomboBox.TabIndex = 1;
+            // 
+            // Estudiantelabel
+            // 
+            this.Estudiantelabel.AutoSize = true;
+            this.Estudiantelabel.Location = new System.Drawing.Point(9, 31);
+            this.Estudiantelabel.Name = "Estudiantelabel";
+            this.Estudiantelabel.Size = new System.Drawing.Size(57, 13);
+            this.Estudiantelabel.TabIndex = 0;
+            this.Estudiantelabel.Text = "Estudiante";
             // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.Image = global::RegistroAsistencia.Properties.Resources.eliminar44px;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(330, 365);
+            this.Eliminarbutton.Location = new System.Drawing.Point(330, 410);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(103, 55);
             this.Eliminarbutton.TabIndex = 9;
@@ -172,7 +192,7 @@
             // 
             this.Gurdarbutton.Image = global::RegistroAsistencia.Properties.Resources.guardar44px;
             this.Gurdarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Gurdarbutton.Location = new System.Drawing.Point(178, 365);
+            this.Gurdarbutton.Location = new System.Drawing.Point(178, 410);
             this.Gurdarbutton.Name = "Gurdarbutton";
             this.Gurdarbutton.Size = new System.Drawing.Size(101, 55);
             this.Gurdarbutton.TabIndex = 8;
@@ -184,7 +204,7 @@
             // 
             this.Nuevobutton.Image = global::RegistroAsistencia.Properties.Resources.agregar44px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 365);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 410);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(101, 55);
             this.Nuevobutton.TabIndex = 7;
@@ -213,33 +233,32 @@
             this.AgregarAsignaturabutton.TabIndex = 5;
             this.AgregarAsignaturabutton.UseVisualStyleBackColor = true;
             // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Image = global::RegistroAsistencia.Properties.Resources.agregarData_opt;
-            this.Agregarbutton.Location = new System.Drawing.Point(352, 35);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(60, 36);
-            this.Agregarbutton.TabIndex = 4;
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            // 
-            // AgregarEstudiantebutton
-            // 
-            this.AgregarEstudiantebutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
-            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(139, 48);
-            this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
-            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(43, 23);
-            this.AgregarEstudiantebutton.TabIndex = 3;
-            this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
-            // 
             // MyerrorProvider
             // 
             this.MyerrorProvider.ContainerControl = this;
+            // 
+            // Cantidadlabel
+            // 
+            this.Cantidadlabel.AutoSize = true;
+            this.Cantidadlabel.Location = new System.Drawing.Point(12, 380);
+            this.Cantidadlabel.Name = "Cantidadlabel";
+            this.Cantidadlabel.Size = new System.Drawing.Size(49, 13);
+            this.Cantidadlabel.TabIndex = 0;
+            this.Cantidadlabel.Text = "Cantidad";
+            // 
+            // CantidadtextBox
+            // 
+            this.CantidadtextBox.Location = new System.Drawing.Point(104, 373);
+            this.CantidadtextBox.Name = "CantidadtextBox";
+            this.CantidadtextBox.Size = new System.Drawing.Size(100, 20);
+            this.CantidadtextBox.TabIndex = 10;
             // 
             // rAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 424);
+            this.ClientSize = new System.Drawing.Size(445, 477);
+            this.Controls.Add(this.CantidadtextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Gurdarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -249,6 +268,7 @@
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.AsignaturacomboBox);
             this.Controls.Add(this.AsistenciaIDnumericUpDown);
+            this.Controls.Add(this.Cantidadlabel);
             this.Controls.Add(this.Asignaturalabel);
             this.Controls.Add(this.Fechalabel);
             this.Controls.Add(this.AsistenciaIDlabel);
@@ -286,5 +306,7 @@
         private System.Windows.Forms.Button Gurdarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
+        private System.Windows.Forms.TextBox CantidadtextBox;
+        private System.Windows.Forms.Label Cantidadlabel;
     }
 }
