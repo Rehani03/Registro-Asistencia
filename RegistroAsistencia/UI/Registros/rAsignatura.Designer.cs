@@ -84,6 +84,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Añadirbutton
             // 
@@ -96,6 +97,7 @@
             this.Añadirbutton.Text = "Añadir";
             this.Añadirbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Añadirbutton.UseVisualStyleBackColor = true;
+            this.Añadirbutton.Click += new System.EventHandler(this.Añadirbutton_Click);
             // 
             // MyerrorProvider
             // 
@@ -112,12 +114,13 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // rAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(285, 158);
+            this.ClientSize = new System.Drawing.Size(297, 158);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Añadirbutton);
             this.Controls.Add(this.Nuevobutton);

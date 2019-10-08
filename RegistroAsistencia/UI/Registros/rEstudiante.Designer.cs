@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.IDlabel = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Nombrelabel = new System.Windows.Forms.Label();
             this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,12 +50,12 @@
             this.IDlabel.TabIndex = 0;
             this.IDlabel.Text = "ID";
             // 
-            // numericUpDown1
+            // IDnumericUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(98, 18);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(109, 20);
-            this.numericUpDown1.TabIndex = 1;
+            this.IDnumericUpDown.Location = new System.Drawing.Point(98, 18);
+            this.IDnumericUpDown.Name = "IDnumericUpDown";
+            this.IDnumericUpDown.Size = new System.Drawing.Size(109, 20);
+            this.IDnumericUpDown.TabIndex = 1;
             // 
             // Nombrelabel
             // 
@@ -84,6 +84,7 @@
             this.Guardarbutton.Text = "Añadir";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -96,6 +97,7 @@
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // Buscarbutton
             // 
@@ -108,6 +110,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // MyerrorProvider
             // 
@@ -122,13 +125,13 @@
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.NombrestextBox);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.Nombrelabel);
             this.Controls.Add(this.IDlabel);
             this.MaximizeBox = false;
             this.Name = "rEstudiante";
             this.Text = "Añadir Estudiante";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,7 +141,7 @@
         #endregion
 
         private System.Windows.Forms.Label IDlabel;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label Nombrelabel;
         private System.Windows.Forms.TextBox NombrestextBox;
         private System.Windows.Forms.Button Buscarbutton;
