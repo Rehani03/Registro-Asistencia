@@ -9,17 +9,24 @@ namespace RegistroAsistencia.Entidades
 {
     public class DetalleAsistencia
     {
+        private int detalleAsistenciaID;
+        private int asistenciaID;
         private int estudianteID;
         private string nombres;
         private int presente;
 
         [Key]
+        public int DetalleAsistenciaID { get; set; }
+        public int AsistenciaID { get; set; }
         public int EstudianteID { get; set; }
         public string Nombres { get; set; }
         public int Presente { get; set; }
+       
 
         public DetalleAsistencia()
         {
+            DetalleAsistenciaID = 0;
+            AsistenciaID = 0;
             EstudianteID = 0;
             Nombres = string.Empty;
             Presente = 0;
