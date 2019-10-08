@@ -1,0 +1,290 @@
+﻿namespace RegistroAsistencia.UI.Registros
+{
+    partial class rAsistencia
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.AsistenciaIDlabel = new System.Windows.Forms.Label();
+            this.AsistenciaIDnumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.Asignaturalabel = new System.Windows.Forms.Label();
+            this.AsignaturacomboBox = new System.Windows.Forms.ComboBox();
+            this.Fechalabel = new System.Windows.Forms.Label();
+            this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Estudiantelabel = new System.Windows.Forms.Label();
+            this.EstudiantecomboBox = new System.Windows.Forms.ComboBox();
+            this.PresentecheckBox = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Gurdarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.AgregarAsignaturabutton = new System.Windows.Forms.Button();
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
+            this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIDnumericUpDown)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // AsistenciaIDlabel
+            // 
+            this.AsistenciaIDlabel.AutoSize = true;
+            this.AsistenciaIDlabel.Location = new System.Drawing.Point(12, 20);
+            this.AsistenciaIDlabel.Name = "AsistenciaIDlabel";
+            this.AsistenciaIDlabel.Size = new System.Drawing.Size(69, 13);
+            this.AsistenciaIDlabel.TabIndex = 0;
+            this.AsistenciaIDlabel.Text = "Asistencia ID";
+            this.AsistenciaIDlabel.Click += new System.EventHandler(this.AsistenciaIDlabel_Click);
+            // 
+            // AsistenciaIDnumericUpDown
+            // 
+            this.AsistenciaIDnumericUpDown.Location = new System.Drawing.Point(104, 12);
+            this.AsistenciaIDnumericUpDown.Name = "AsistenciaIDnumericUpDown";
+            this.AsistenciaIDnumericUpDown.Size = new System.Drawing.Size(85, 20);
+            this.AsistenciaIDnumericUpDown.TabIndex = 1;
+            // 
+            // Asignaturalabel
+            // 
+            this.Asignaturalabel.AutoSize = true;
+            this.Asignaturalabel.Location = new System.Drawing.Point(12, 59);
+            this.Asignaturalabel.Name = "Asignaturalabel";
+            this.Asignaturalabel.Size = new System.Drawing.Size(57, 13);
+            this.Asignaturalabel.TabIndex = 0;
+            this.Asignaturalabel.Text = "Asignatura";
+            // 
+            // AsignaturacomboBox
+            // 
+            this.AsignaturacomboBox.FormattingEnabled = true;
+            this.AsignaturacomboBox.Location = new System.Drawing.Point(104, 50);
+            this.AsignaturacomboBox.Name = "AsignaturacomboBox";
+            this.AsignaturacomboBox.Size = new System.Drawing.Size(272, 21);
+            this.AsignaturacomboBox.TabIndex = 2;
+            // 
+            // Fechalabel
+            // 
+            this.Fechalabel.AutoSize = true;
+            this.Fechalabel.Location = new System.Drawing.Point(299, 18);
+            this.Fechalabel.Name = "Fechalabel";
+            this.Fechalabel.Size = new System.Drawing.Size(37, 13);
+            this.Fechalabel.TabIndex = 0;
+            this.Fechalabel.Text = "Fecha";
+            this.Fechalabel.Click += new System.EventHandler(this.AsistenciaIDlabel_Click);
+            // 
+            // FechadateTimePicker
+            // 
+            this.FechadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.FechadateTimePicker.Location = new System.Drawing.Point(348, 11);
+            this.FechadateTimePicker.Name = "FechadateTimePicker";
+            this.FechadateTimePicker.Size = new System.Drawing.Size(85, 20);
+            this.FechadateTimePicker.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.Agregarbutton);
+            this.groupBox1.Controls.Add(this.AgregarEstudiantebutton);
+            this.groupBox1.Controls.Add(this.PresentecheckBox);
+            this.groupBox1.Controls.Add(this.EstudiantecomboBox);
+            this.groupBox1.Controls.Add(this.Estudiantelabel);
+            this.groupBox1.Location = new System.Drawing.Point(15, 91);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(418, 268);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Asistencia";
+            // 
+            // Estudiantelabel
+            // 
+            this.Estudiantelabel.AutoSize = true;
+            this.Estudiantelabel.Location = new System.Drawing.Point(9, 31);
+            this.Estudiantelabel.Name = "Estudiantelabel";
+            this.Estudiantelabel.Size = new System.Drawing.Size(57, 13);
+            this.Estudiantelabel.TabIndex = 0;
+            this.Estudiantelabel.Text = "Estudiante";
+            // 
+            // EstudiantecomboBox
+            // 
+            this.EstudiantecomboBox.FormattingEnabled = true;
+            this.EstudiantecomboBox.Location = new System.Drawing.Point(12, 48);
+            this.EstudiantecomboBox.Name = "EstudiantecomboBox";
+            this.EstudiantecomboBox.Size = new System.Drawing.Size(121, 21);
+            this.EstudiantecomboBox.TabIndex = 1;
+            // 
+            // PresentecheckBox
+            // 
+            this.PresentecheckBox.AutoSize = true;
+            this.PresentecheckBox.Location = new System.Drawing.Point(230, 50);
+            this.PresentecheckBox.Name = "PresentecheckBox";
+            this.PresentecheckBox.Size = new System.Drawing.Size(68, 17);
+            this.PresentecheckBox.TabIndex = 2;
+            this.PresentecheckBox.Text = "Presente";
+            this.PresentecheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(400, 172);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Image = global::RegistroAsistencia.Properties.Resources.eliminar44px;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.Location = new System.Drawing.Point(330, 365);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(103, 55);
+            this.Eliminarbutton.TabIndex = 9;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Gurdarbutton
+            // 
+            this.Gurdarbutton.Image = global::RegistroAsistencia.Properties.Resources.guardar44px;
+            this.Gurdarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Gurdarbutton.Location = new System.Drawing.Point(178, 365);
+            this.Gurdarbutton.Name = "Gurdarbutton";
+            this.Gurdarbutton.Size = new System.Drawing.Size(101, 55);
+            this.Gurdarbutton.TabIndex = 8;
+            this.Gurdarbutton.Text = "Guardar";
+            this.Gurdarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Gurdarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::RegistroAsistencia.Properties.Resources.agregar44px;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 365);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(101, 55);
+            this.Nuevobutton.TabIndex = 7;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::RegistroAsistencia.Properties.Resources.buscar20px;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(195, 10);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Buscarbutton.TabIndex = 6;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            // 
+            // AgregarAsignaturabutton
+            // 
+            this.AgregarAsignaturabutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
+            this.AgregarAsignaturabutton.Location = new System.Drawing.Point(390, 48);
+            this.AgregarAsignaturabutton.Name = "AgregarAsignaturabutton";
+            this.AgregarAsignaturabutton.Size = new System.Drawing.Size(37, 23);
+            this.AgregarAsignaturabutton.TabIndex = 5;
+            this.AgregarAsignaturabutton.UseVisualStyleBackColor = true;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Image = global::RegistroAsistencia.Properties.Resources.agregarData_opt;
+            this.Agregarbutton.Location = new System.Drawing.Point(352, 35);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(60, 36);
+            this.Agregarbutton.TabIndex = 4;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            // 
+            // AgregarEstudiantebutton
+            // 
+            this.AgregarEstudiantebutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
+            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(139, 48);
+            this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
+            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(43, 23);
+            this.AgregarEstudiantebutton.TabIndex = 3;
+            this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
+            // 
+            // MyerrorProvider
+            // 
+            this.MyerrorProvider.ContainerControl = this;
+            // 
+            // rAsistencia
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(445, 424);
+            this.Controls.Add(this.Eliminarbutton);
+            this.Controls.Add(this.Gurdarbutton);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(this.AgregarAsignaturabutton);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.FechadateTimePicker);
+            this.Controls.Add(this.AsignaturacomboBox);
+            this.Controls.Add(this.AsistenciaIDnumericUpDown);
+            this.Controls.Add(this.Asignaturalabel);
+            this.Controls.Add(this.Fechalabel);
+            this.Controls.Add(this.AsistenciaIDlabel);
+            this.MaximizeBox = false;
+            this.Name = "rAsistencia";
+            this.Text = "Registro de Asistencia";
+            ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIDnumericUpDown)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label AsistenciaIDlabel;
+        private System.Windows.Forms.NumericUpDown AsistenciaIDnumericUpDown;
+        private System.Windows.Forms.Label Asignaturalabel;
+        private System.Windows.Forms.ComboBox AsignaturacomboBox;
+        private System.Windows.Forms.Label Fechalabel;
+        private System.Windows.Forms.DateTimePicker FechadateTimePicker;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button AgregarAsignaturabutton;
+        private System.Windows.Forms.Button Buscarbutton;
+        private System.Windows.Forms.Button Agregarbutton;
+        private System.Windows.Forms.Button AgregarEstudiantebutton;
+        private System.Windows.Forms.CheckBox PresentecheckBox;
+        private System.Windows.Forms.ComboBox EstudiantecomboBox;
+        private System.Windows.Forms.Label Estudiantelabel;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Button Gurdarbutton;
+        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.ErrorProvider MyerrorProvider;
+    }
+}
