@@ -56,6 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entidades\Asignatura.cs" />
+    <Compile Include="Entidades\Asistencia.cs" />
+    <Compile Include="Entidades\DetalleAsistencia.cs" />
+    <Compile Include="Entidades\Estudiante.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,7 +97,6 @@
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="DAL\" />
-    <Folder Include="Entidades\" />
     <Folder Include="Resources\" />
     <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Registros\" />
