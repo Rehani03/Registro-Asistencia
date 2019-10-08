@@ -63,6 +63,16 @@ namespace RegistroAsistencia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar38px_opt {
+            get {
+                object obj = ResourceManager.GetObject("agregar38px_opt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar44px {
             get {
                 object obj = ResourceManager.GetObject("agregar44px", resourceCulture);
@@ -83,9 +93,29 @@ namespace RegistroAsistencia.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anadirOriginal38px_opt {
+            get {
+                object obj = ResourceManager.GetObject("anadirOriginal38px_opt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap buscar20px {
             get {
                 object obj = ResourceManager.GetObject("buscar20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancelar_opt {
+            get {
+                object obj = ResourceManager.GetObject("cancelar_opt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

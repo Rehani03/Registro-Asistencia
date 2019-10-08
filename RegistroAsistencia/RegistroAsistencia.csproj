@@ -78,11 +78,23 @@
     <Compile Include="UI\Consultas\cAsistencia.Designer.cs">
       <DependentUpon>cAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Registros\rAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rAsignatura.Designer.cs">
+      <DependentUpon>rAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\Registros\rAsistencia.Designer.cs">
       <DependentUpon>rAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\rEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rEstudiante.Designer.cs">
+      <DependentUpon>rEstudiante.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -100,8 +112,14 @@
     <EmbeddedResource Include="UI\Consultas\cAsistencia.resx">
       <DependentUpon>cAsistencia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rAsignatura.resx">
+      <DependentUpon>rAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAsistencia.resx">
       <DependentUpon>rAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rEstudiante.resx">
+      <DependentUpon>rEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -138,6 +156,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar44px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar38px_opt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadirOriginal38px_opt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
