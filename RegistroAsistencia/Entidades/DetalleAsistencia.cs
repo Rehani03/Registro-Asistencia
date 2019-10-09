@@ -32,5 +32,14 @@ namespace RegistroAsistencia.Entidades
             Presente = 0;
         }
 
+        public DetalleAsistencia(int DetalleAsistenciaID, int AsistenciaID, int EstudianteID, string Nombres, int Presente)
+        {
+            this.DetalleAsistenciaID = DetalleAsistenciaID;
+            this.AsistenciaID = AsistenciaID;
+            this.EstudianteID = EstudianteID;
+            this.Nombres = Nombres;
+            this.Presente = Presente;
+        }
+
     }
 }
