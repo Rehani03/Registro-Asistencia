@@ -21,6 +21,7 @@ namespace RegistroAsistencia.UI.Registros
             InitializeComponent();
             this.Detalle = new List<DetalleAsistencia>();
             LlenaComboBoxAsignatura();
+            LlenaComboxEstudiante();
         }
 
         private void LlenaComboBoxAsignatura()
