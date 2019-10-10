@@ -264,7 +264,7 @@ namespace RegistroAsistencia.UI.Registros
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int ID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
-            Asistencia asistencia = new Asistencia();
+            Asistencia asistencia;
 
             asistencia = AsistenciaBLL.Buscar(ID);
 

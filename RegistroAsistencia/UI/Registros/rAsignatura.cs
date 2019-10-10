@@ -125,5 +125,32 @@ namespace RegistroAsistencia.UI.Registros
             }
 
         }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            bool paso;
+            int ID = Convert.ToInt32(IDnumericUpDown.Value);
+            repositorio = new RepositorioBase<Asignatura>();
+
+            if (!Existe())
+            {
+                MessageBox.Show("No se puede eliminar porque no existe en la base de datos.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                paso = repositorio.Eliminar(ID);
+
+                if (paso)
+                {
+                    Limpiar();
+                    MessageBox.Show("Elimando con exito.", "Exito!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al tratar de eliminar.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
