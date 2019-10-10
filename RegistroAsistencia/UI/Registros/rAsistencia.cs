@@ -41,9 +41,9 @@ namespace RegistroAsistencia.UI.Registros
             List<Estudiante> lista = new List<Estudiante>();
             lista = repositorio.GetList(p => true);
 
-            AsignaturacomboBox.DataSource = lista;
-            AsignaturacomboBox.ValueMember = "EstudianteID";
-            AsignaturacomboBox.DisplayMember = "Nombre";
+            EstudiantecomboBox.DataSource = lista;
+            EstudiantecomboBox.ValueMember = "EstudianteID";
+            EstudiantecomboBox.DisplayMember = "Nombre";
         }
 
         private void AgregarAsignaturabutton_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace RegistroAsistencia.UI.Registros
 
             if(this.Detalle.Count == 0)
             {
-                MyerrorProvider.SetError(EstudiantecomboBox, "Debe agregar al menos un estudiante.");
+                MyerrorProvider.SetError(Agregarbutton, "Debe agregar al menos un estudiante.");
                 Agregarbutton.Focus();
                 paso = false;
             }
@@ -161,7 +161,12 @@ namespace RegistroAsistencia.UI.Registros
         private void CargarGrid()
         {
             DetalledataGridView.DataSource = null;
+            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DetalledataGridView.DataSource = this.Detalle;
+            this.DetalledataGridView.Columns["DetalleAsistenciaID"].Visible = false;
+            this.DetalledataGridView.Columns["AsistenciaID"].Visible = false;
+            
+
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -179,6 +184,16 @@ namespace RegistroAsistencia.UI.Registros
                 return paso = 0;
         }
 
+        private string GetNombreEstudiante()
+        {
+            string nombre = "";
+
+            RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
+            nombre = repositorio.Buscar((int)EstudiantecomboBox.SelectedValue).Nombre;
+
+            return nombre;
+        }
+
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             if (DetalledataGridView.DataSource != null)
@@ -190,13 +205,14 @@ namespace RegistroAsistencia.UI.Registros
                         DetalleAsistenciaID: 0,
                         AsistenciaID: Convert.ToInt32(AsistenciaIDnumericUpDown.Value),
                         EstudianteID: (int)EstudiantecomboBox.SelectedValue,
-                        Nombres: EstudiantecomboBox.SelectedItem.ToString(),
+                        Nombres: GetNombreEstudiante(),
                         Presente: VerificarCheckBox()
                     )
              );
 
             CargarGrid();
             MyerrorProvider.Clear();
+            PresentecheckBox.Checked = false;
             EstudiantecomboBox.Text = string.Empty;
         }
 

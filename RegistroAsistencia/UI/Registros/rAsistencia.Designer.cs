@@ -147,7 +147,7 @@
             // Agregarbutton
             // 
             this.Agregarbutton.Image = global::RegistroAsistencia.Properties.Resources.agregarData_opt;
-            this.Agregarbutton.Location = new System.Drawing.Point(352, 35);
+            this.Agregarbutton.Location = new System.Drawing.Point(324, 35);
             this.Agregarbutton.Name = "Agregarbutton";
             this.Agregarbutton.Size = new System.Drawing.Size(60, 36);
             this.Agregarbutton.TabIndex = 4;
