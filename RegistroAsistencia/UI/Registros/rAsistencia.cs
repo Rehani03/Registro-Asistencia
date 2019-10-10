@@ -16,14 +16,15 @@ namespace RegistroAsistencia.UI.Registros
     public partial class rAsistencia : Form
     {
         public List<DetalleAsistencia> Detalle { get; set; }
+        
         public rAsistencia()
         {
             InitializeComponent();
             this.Detalle = new List<DetalleAsistencia>();
             LlenaComboBoxAsignatura();
             LlenaComboxEstudiante();
+            
         }
-
         private void LlenaComboBoxAsignatura()
         {
             RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
@@ -175,6 +176,7 @@ namespace RegistroAsistencia.UI.Registros
             DetalledataGridView.DataSource = this.Detalle;
             this.DetalledataGridView.Columns["DetalleAsistenciaID"].Visible = false;
             this.DetalledataGridView.Columns["AsistenciaID"].Visible = false;
+            //this.DetalledataGridView.Columns["Presente"].Visible = false;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
