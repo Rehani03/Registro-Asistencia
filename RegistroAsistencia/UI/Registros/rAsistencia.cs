@@ -60,6 +60,15 @@ namespace RegistroAsistencia.UI.Registros
             LlenaComboxEstudiante();
         }
 
+        private string GetNombreAsignatura(int ID)
+        {
+            string nombre = "";
+            RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
+            nombre = repositorio.Buscar(ID).Nombre;
+            return nombre;
+        }
+
+
         private void LimpiarCampos()
         {
             MyerrorProvider.Clear();
@@ -80,7 +89,7 @@ namespace RegistroAsistencia.UI.Registros
             Asistencia asistencia = new Asistencia();
 
             asistencia.AsistenciaID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
-            asistencia.AsignaturaID = AsignaturacomboBox.SelectedIndex;
+            asistencia.AsignaturaID = (int)AsignaturacomboBox.SelectedValue;
             asistencia.Fecha = FechadateTimePicker.Value;
             asistencia.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
 
@@ -92,7 +101,7 @@ namespace RegistroAsistencia.UI.Registros
         private void LlenaCampos(Asistencia a)
         {
             AsistenciaIDnumericUpDown.Value = a.AsistenciaID;
-            AsignaturacomboBox.SelectedIndex = a.AsignaturaID;
+            AsignaturacomboBox.Text = GetNombreAsignatura(a.AsignaturaID);
             FechadateTimePicker.Value = a.Fecha;
             CantidadtextBox.Text = Convert.ToString(a.Cantidad);
 
@@ -183,6 +192,7 @@ namespace RegistroAsistencia.UI.Registros
                 return paso = 0;
         }
 
+       
         private string GetNombreEstudiante()
         {
             string nombre = "";
