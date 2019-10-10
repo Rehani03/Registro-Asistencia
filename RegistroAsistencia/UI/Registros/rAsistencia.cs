@@ -68,6 +68,7 @@ namespace RegistroAsistencia.UI.Registros
             EstudiantecomboBox.Text = string.Empty;
             PresentecheckBox.Checked = false;
             FechadateTimePicker.Value = DateTime.Now;
+            CantidadtextBox.Text = string.Empty;
 
             this.Detalle = new List<DetalleAsistencia>();
             CargarGrid();
