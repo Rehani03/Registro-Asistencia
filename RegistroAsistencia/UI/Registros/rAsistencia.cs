@@ -166,8 +166,6 @@ namespace RegistroAsistencia.UI.Registros
             DetalledataGridView.DataSource = this.Detalle;
             this.DetalledataGridView.Columns["DetalleAsistenciaID"].Visible = false;
             this.DetalledataGridView.Columns["AsistenciaID"].Visible = false;
-            
-
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -284,14 +282,16 @@ namespace RegistroAsistencia.UI.Registros
             Asistencia asistencia;
 
             asistencia = AsistenciaBLL.Buscar(ID);
-
+            
             if (asistencia != null)
             {
                 LimpiarCampos();
                 LlenaCampos(asistencia);
             }
             else
+            {
                 MessageBox.Show("Asistencia no encontrada.");
+            }  
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

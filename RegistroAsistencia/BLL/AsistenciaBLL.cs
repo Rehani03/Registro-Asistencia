@@ -99,7 +99,16 @@ namespace RegistroAsistencia.BLL
             try
             {
                 asistencia = db.Asistencia.Find(id);
-                asistencia.Presentes.Count();
+                if (asistencia != null)
+                {
+                    asistencia.Presentes.Count();
+                }
+                else
+                {
+                    db.Dispose();
+                    return asistencia;
+                }
+                    
             }
             catch (Exception)
             {

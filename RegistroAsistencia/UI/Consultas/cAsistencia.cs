@@ -55,6 +55,7 @@ namespace RegistroAsistencia.UI.Consultas
             }
 
             ConsultadataGridView.DataSource = null;
+            this.ConsultadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ConsultadataGridView.DataSource = listado;
 
         }
