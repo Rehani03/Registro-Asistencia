@@ -14,9 +14,11 @@ namespace RegistroAsistencia.UI.Consultas
 {
     public partial class cAsistencia : Form
     {
+        public List<DetalleAsistencia> dt { get; set; }
         public cAsistencia()
         {
             InitializeComponent();
+            dt = new List<DetalleAsistencia>();
         }
 
         private void Consultarbutton_Click(object sender, EventArgs e)
@@ -75,5 +77,19 @@ namespace RegistroAsistencia.UI.Consultas
             }
             return ID;
         }
+
+        private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ID = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells[0].Value); 
+            Asistencia asistencia = AsistenciaBLL.Buscar(ID);
+            cDetalle detalle = new cDetalle();   
+            dt = asistencia.Presentes;
+
+            detalle.DetalleAsistenciadataGridView.DataSource = null;
+            detalle.DetalleAsistenciadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            detalle.DetalleAsistenciadataGridView.DataSource = dt;
+            detalle.ShowDialog();
+        }
+
     }
 }

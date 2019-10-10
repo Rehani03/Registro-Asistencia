@@ -78,6 +78,12 @@
     <Compile Include="UI\Consultas\cAsistencia.Designer.cs">
       <DependentUpon>cAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\cDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cDetalle.Designer.cs">
+      <DependentUpon>cDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\cAsistencia.resx">
       <DependentUpon>cAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cDetalle.resx">
+      <DependentUpon>cDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rAsignatura.resx">
       <DependentUpon>rAsignatura.cs</DependentUpon>
