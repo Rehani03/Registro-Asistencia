@@ -158,9 +158,9 @@
             // AgregarEstudiantebutton
             // 
             this.AgregarEstudiantebutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
-            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(154, 48);
+            this.AgregarEstudiantebutton.Location = new System.Drawing.Point(146, 48);
             this.AgregarEstudiantebutton.Name = "AgregarEstudiantebutton";
-            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(43, 23);
+            this.AgregarEstudiantebutton.Size = new System.Drawing.Size(43, 21);
             this.AgregarEstudiantebutton.TabIndex = 3;
             this.AgregarEstudiantebutton.UseVisualStyleBackColor = true;
             this.AgregarEstudiantebutton.Click += new System.EventHandler(this.AgregarEstudiantebutton_Click);
@@ -229,7 +229,7 @@
             // 
             this.Gurdarbutton.Image = global::RegistroAsistencia.Properties.Resources.guardar44px;
             this.Gurdarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Gurdarbutton.Location = new System.Drawing.Point(178, 454);
+            this.Gurdarbutton.Location = new System.Drawing.Point(169, 454);
             this.Gurdarbutton.Name = "Gurdarbutton";
             this.Gurdarbutton.Size = new System.Drawing.Size(101, 55);
             this.Gurdarbutton.TabIndex = 8;
@@ -267,7 +267,7 @@
             // AgregarAsignaturabutton
             // 
             this.AgregarAsignaturabutton.Image = global::RegistroAsistencia.Properties.Resources.mas_opt;
-            this.AgregarAsignaturabutton.Location = new System.Drawing.Point(390, 48);
+            this.AgregarAsignaturabutton.Location = new System.Drawing.Point(390, 49);
             this.AgregarAsignaturabutton.Name = "AgregarAsignaturabutton";
             this.AgregarAsignaturabutton.Size = new System.Drawing.Size(37, 23);
             this.AgregarAsignaturabutton.TabIndex = 5;
