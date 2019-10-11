@@ -36,8 +36,10 @@
             this.Fechalabel = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Removerbutton = new System.Windows.Forms.Button();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
+            this.EstudianteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Presentes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
             this.PresentecheckBox = new System.Windows.Forms.CheckBox();
@@ -51,6 +53,7 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.AgregarAsignaturabutton = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIDnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
@@ -118,32 +121,43 @@
             this.groupBox1.Controls.Add(this.Estudiantelabel);
             this.groupBox1.Location = new System.Drawing.Point(15, 91);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(418, 301);
+            this.groupBox1.Size = new System.Drawing.Size(418, 302);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asistencia";
             // 
-            // Removerbutton
-            // 
-            this.Removerbutton.Image = global::RegistroAsistencia.Properties.Resources.cancelar_opt;
-            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Removerbutton.Location = new System.Drawing.Point(12, 267);
-            this.Removerbutton.Name = "Removerbutton";
-            this.Removerbutton.Size = new System.Drawing.Size(121, 28);
-            this.Removerbutton.TabIndex = 6;
-            this.Removerbutton.Text = "Remover Fila";
-            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Removerbutton.UseVisualStyleBackColor = true;
-            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
-            // 
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalledataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EstudianteID,
+            this.NombreColumn,
+            this.Presentes});
             this.DetalledataGridView.Location = new System.Drawing.Point(12, 88);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(400, 172);
             this.DetalledataGridView.TabIndex = 5;
+            // 
+            // EstudianteID
+            // 
+            this.EstudianteID.HeaderText = "EstudianteID";
+            this.EstudianteID.Name = "EstudianteID";
+            this.EstudianteID.ReadOnly = true;
+            // 
+            // NombreColumn
+            // 
+            this.NombreColumn.HeaderText = "Nombres";
+            this.NombreColumn.Name = "NombreColumn";
+            this.NombreColumn.ReadOnly = true;
+            this.NombreColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.NombreColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Presentes
+            // 
+            this.Presentes.HeaderText = "Presentes";
+            this.Presentes.Name = "Presentes";
+            this.Presentes.ReadOnly = true;
             // 
             // Agregarbutton
             // 
@@ -199,7 +213,7 @@
             // Cantidadlabel
             // 
             this.Cantidadlabel.AutoSize = true;
-            this.Cantidadlabel.Location = new System.Drawing.Point(12, 416);
+            this.Cantidadlabel.Location = new System.Drawing.Point(12, 421);
             this.Cantidadlabel.Name = "Cantidadlabel";
             this.Cantidadlabel.Size = new System.Drawing.Size(49, 13);
             this.Cantidadlabel.TabIndex = 0;
@@ -207,7 +221,7 @@
             // 
             // CantidadtextBox
             // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(104, 409);
+            this.CantidadtextBox.Location = new System.Drawing.Point(104, 414);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 20);
             this.CantidadtextBox.TabIndex = 10;
@@ -216,7 +230,7 @@
             // 
             this.Eliminarbutton.Image = global::RegistroAsistencia.Properties.Resources.eliminar44px;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(330, 454);
+            this.Eliminarbutton.Location = new System.Drawing.Point(330, 459);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(103, 55);
             this.Eliminarbutton.TabIndex = 9;
@@ -229,7 +243,7 @@
             // 
             this.Gurdarbutton.Image = global::RegistroAsistencia.Properties.Resources.guardar44px;
             this.Gurdarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Gurdarbutton.Location = new System.Drawing.Point(169, 454);
+            this.Gurdarbutton.Location = new System.Drawing.Point(169, 459);
             this.Gurdarbutton.Name = "Gurdarbutton";
             this.Gurdarbutton.Size = new System.Drawing.Size(101, 55);
             this.Gurdarbutton.TabIndex = 8;
@@ -242,7 +256,7 @@
             // 
             this.Nuevobutton.Image = global::RegistroAsistencia.Properties.Resources.agregar44px;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(15, 454);
+            this.Nuevobutton.Location = new System.Drawing.Point(15, 459);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(101, 55);
             this.Nuevobutton.TabIndex = 7;
@@ -274,11 +288,24 @@
             this.AgregarAsignaturabutton.UseVisualStyleBackColor = true;
             this.AgregarAsignaturabutton.Click += new System.EventHandler(this.AgregarAsignaturabutton_Click);
             // 
+            // Removerbutton
+            // 
+            this.Removerbutton.Image = global::RegistroAsistencia.Properties.Resources.cancelar_opt;
+            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Removerbutton.Location = new System.Drawing.Point(12, 267);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(132, 29);
+            this.Removerbutton.TabIndex = 6;
+            this.Removerbutton.Text = "Remover Filas";
+            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
+            // 
             // rAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 521);
+            this.ClientSize = new System.Drawing.Size(445, 526);
             this.Controls.Add(this.CantidadtextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Gurdarbutton);
@@ -329,6 +356,9 @@
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.TextBox CantidadtextBox;
         private System.Windows.Forms.Label Cantidadlabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Presentes;
         private System.Windows.Forms.Button Removerbutton;
     }
 }

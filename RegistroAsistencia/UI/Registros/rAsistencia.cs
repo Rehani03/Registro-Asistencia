@@ -21,6 +21,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             InitializeComponent();
             this.Detalle = new List<DetalleAsistencia>();
+            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             LlenaComboBoxAsignatura();
             LlenaComboxEstudiante();
             
@@ -81,7 +82,7 @@ namespace RegistroAsistencia.UI.Registros
             CantidadtextBox.Text = string.Empty;
 
             this.Detalle = new List<DetalleAsistencia>();
-            CargarGrid();
+            this.DetalledataGridView.Rows.Clear();
 
         }
 
@@ -107,7 +108,8 @@ namespace RegistroAsistencia.UI.Registros
             CantidadtextBox.Text = Convert.ToString(a.Cantidad);
 
             this.Detalle = a.Presentes;
-            CargarGrid();
+            CargarGridFor();
+           
         }
 
         private bool Validar()
@@ -115,7 +117,7 @@ namespace RegistroAsistencia.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if(AsignaturacomboBox.SelectedIndex == -1)
+            if(AsignaturacomboBox.Text == "")
             {
                 MyerrorProvider.SetError(AsignaturacomboBox, "Debe elegir una asignatura.");
                 paso = false;
@@ -171,17 +173,36 @@ namespace RegistroAsistencia.UI.Registros
 
         private void CargarGrid()
         {
-            DetalledataGridView.DataSource = null;
-            this.DetalledataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DetalledataGridView.DataSource = this.Detalle;
-            this.DetalledataGridView.Columns["DetalleAsistenciaID"].Visible = false;
-            this.DetalledataGridView.Columns["AsistenciaID"].Visible = false;
-            //this.DetalledataGridView.Columns["Presente"].Visible = false;
+            bool flag;
+
+            if (VerificarCheckBox() == 1)
+                flag = true;
+            else
+                flag = false;
+
+            this.DetalledataGridView.DataSource = null;
+            this.DetalledataGridView.Rows.Add((int)EstudiantecomboBox.SelectedValue, GetNombreEstudiante(), flag);
         }
 
+        private void CargarGridFor()
+        {
+            bool flag;
+            this.DetalledataGridView.DataSource = null;
+            this.DetalledataGridView.Rows.Clear();
+            foreach (var item in this.Detalle)
+            {
+                if (item.Presente == 1)
+                    flag = true;
+                else
+                    flag = false;
+                this.DetalledataGridView.Rows.Add(item.EstudianteID, item.Nombres, flag);
+            }
+
+        }
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+            
         }
 
         private int VerificarCheckBox()
@@ -227,27 +248,6 @@ namespace RegistroAsistencia.UI.Registros
             EstudiantecomboBox.Text = string.Empty;
         }
 
-        private bool ValidarRemover()
-        {
-            bool paso = true;
-            if(DetalledataGridView.SelectedRows == null)
-            {
-                paso = false;
-            }
-
-            return paso;
-        }
-
-        private void Removerbutton_Click(object sender, EventArgs e)
-        {
-            if (!ValidarRemover())
-                return;
-            if(DetalledataGridView.Rows.Count>0 && DetalledataGridView.CurrentRow != null)
-            {
-                this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
-                CargarGrid();
-            }
-        }
 
         private bool Existe()
         {
@@ -330,6 +330,28 @@ namespace RegistroAsistencia.UI.Registros
                 }
             }
             
+        }
+
+        private bool ValidarRemover()
+        {
+            bool paso = true;
+            if (DetalledataGridView.SelectedRows == null)
+            {
+                paso = false;
+            }
+
+            return paso;
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            if (!ValidarRemover())
+                return;
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            {
+                this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+                CargarGridFor();
+            }
         }
     }
 }

@@ -80,6 +80,7 @@ namespace RegistroAsistencia.UI.Consultas
 
         private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            bool flag;
             int ID = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells[0].Value);
             List<DetalleAsistencia> dt = new List<DetalleAsistencia>();
             Asistencia asistencia = AsistenciaBLL.Buscar(ID);
@@ -88,9 +89,16 @@ namespace RegistroAsistencia.UI.Consultas
             dt = asistencia.Presentes;
             detalle.DetalleAsistenciadataGridView.DataSource = null;
             detalle.DetalleAsistenciadataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            detalle.DetalleAsistenciadataGridView.DataSource = dt;
-            detalle.DetalleAsistenciadataGridView.Columns["DetalleAsistenciaID"].Visible = false;
-            detalle.DetalleAsistenciadataGridView.Columns["AsistenciaID"].Visible = false;
+
+            foreach (var item in dt)
+            {
+                if (item.Presente == 1)
+                    flag = true;
+                else
+                    flag = false;
+
+                detalle.DetalleAsistenciadataGridView.Rows.Add(item.EstudianteID, item.Nombres, flag);
+            }
             detalle.ShowDialog();
         }
 

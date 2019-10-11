@@ -29,17 +29,42 @@
         private void InitializeComponent()
         {
             this.DetalleAsistenciadataGridView = new System.Windows.Forms.DataGridView();
+            this.EstudianteIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombresColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PresentesColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DetalleAsistenciadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // DetalleAsistenciadataGridView
             // 
             this.DetalleAsistenciadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalleAsistenciadataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EstudianteIDColumn,
+            this.NombresColumn,
+            this.PresentesColumn});
             this.DetalleAsistenciadataGridView.Location = new System.Drawing.Point(12, 12);
             this.DetalleAsistenciadataGridView.Name = "DetalleAsistenciadataGridView";
             this.DetalleAsistenciadataGridView.ReadOnly = true;
             this.DetalleAsistenciadataGridView.Size = new System.Drawing.Size(624, 265);
             this.DetalleAsistenciadataGridView.TabIndex = 0;
+            // 
+            // EstudianteIDColumn
+            // 
+            this.EstudianteIDColumn.HeaderText = "EstudianteID";
+            this.EstudianteIDColumn.Name = "EstudianteIDColumn";
+            this.EstudianteIDColumn.ReadOnly = true;
+            // 
+            // NombresColumn
+            // 
+            this.NombresColumn.HeaderText = "Nombres";
+            this.NombresColumn.Name = "NombresColumn";
+            this.NombresColumn.ReadOnly = true;
+            // 
+            // PresentesColumn
+            // 
+            this.PresentesColumn.HeaderText = "Presentes";
+            this.PresentesColumn.Name = "PresentesColumn";
+            this.PresentesColumn.ReadOnly = true;
             // 
             // cDetalle
             // 
@@ -58,5 +83,8 @@
         #endregion
 
         public System.Windows.Forms.DataGridView DetalleAsistenciadataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteIDColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombresColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PresentesColumn;
     }
 }
