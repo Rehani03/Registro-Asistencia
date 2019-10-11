@@ -24,7 +24,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             MyerrorProvider.Clear();
             IDnumericUpDown.Value = 0;
-            AsignaturatextBox.Text = string.Empty;
+            AsignaturamaskedTextBox.Text = string.Empty;
 
         }
 
@@ -32,9 +32,9 @@ namespace RegistroAsistencia.UI.Registros
         {
             bool paso = true;
             MyerrorProvider.Clear();
-            if (string.IsNullOrWhiteSpace(AsignaturatextBox.Text))
+            if (string.IsNullOrWhiteSpace(AsignaturamaskedTextBox.Text))
             {
-                MyerrorProvider.SetError(AsignaturatextBox, "La asignatura no puede estar vacía.");
+                MyerrorProvider.SetError(AsignaturamaskedTextBox, "La asignatura no puede estar vacía.");
                 paso = false;
             }
 
@@ -45,7 +45,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             Asignatura asignatura = new Asignatura();
             asignatura.AsignaturaID = Convert.ToInt32(IDnumericUpDown.Value);
-            asignatura.Nombre = AsignaturatextBox.Text;
+            asignatura.Nombre = AsignaturamaskedTextBox.Text;
 
             return asignatura;
         }
@@ -53,12 +53,12 @@ namespace RegistroAsistencia.UI.Registros
         private void LlenaCampos(Asignatura a)
         {
             IDnumericUpDown.Value = a.AsignaturaID;
-            AsignaturatextBox.Text = a.Nombre;
+            AsignaturamaskedTextBox.Text = a.Nombre;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
-            Limpiar();
+           Limpiar();
         }
 
         private bool Existe()

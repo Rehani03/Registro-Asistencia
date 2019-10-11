@@ -32,12 +32,12 @@
             this.IDlabel = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Nombrelabel = new System.Windows.Forms.Label();
-            this.NombrestextBox = new System.Windows.Forms.TextBox();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.NombremaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -66,13 +66,6 @@
             this.Nombrelabel.Size = new System.Drawing.Size(49, 13);
             this.Nombrelabel.TabIndex = 0;
             this.Nombrelabel.Text = "Nombres";
-            // 
-            // NombrestextBox
-            // 
-            this.NombrestextBox.Location = new System.Drawing.Point(98, 58);
-            this.NombrestextBox.Name = "NombrestextBox";
-            this.NombrestextBox.Size = new System.Drawing.Size(269, 20);
-            this.NombrestextBox.TabIndex = 2;
             // 
             // Guardarbutton
             // 
@@ -130,16 +123,24 @@
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
+            // NombremaskedTextBox
+            // 
+            this.NombremaskedTextBox.Location = new System.Drawing.Point(98, 57);
+            this.NombremaskedTextBox.Mask = "????????????????????????????????????????????";
+            this.NombremaskedTextBox.Name = "NombremaskedTextBox";
+            this.NombremaskedTextBox.Size = new System.Drawing.Size(269, 20);
+            this.NombremaskedTextBox.TabIndex = 7;
+            // 
             // rEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 158);
+            this.Controls.Add(this.NombremaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
-            this.Controls.Add(this.NombrestextBox);
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.Nombrelabel);
             this.Controls.Add(this.IDlabel);
@@ -158,11 +159,11 @@
         private System.Windows.Forms.Label IDlabel;
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label Nombrelabel;
-        private System.Windows.Forms.TextBox NombrestextBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.MaskedTextBox NombremaskedTextBox;
     }
 }

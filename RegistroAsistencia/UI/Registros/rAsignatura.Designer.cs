@@ -32,12 +32,12 @@
             this.IDlabel = new System.Windows.Forms.Label();
             this.IDnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Asignaturalabel = new System.Windows.Forms.Label();
-            this.AsignaturatextBox = new System.Windows.Forms.TextBox();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Añadirbutton = new System.Windows.Forms.Button();
             this.MyerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.AsignaturamaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IDnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -66,13 +66,6 @@
             this.Asignaturalabel.Size = new System.Drawing.Size(57, 13);
             this.Asignaturalabel.TabIndex = 0;
             this.Asignaturalabel.Text = "Asignatura";
-            // 
-            // AsignaturatextBox
-            // 
-            this.AsignaturatextBox.Location = new System.Drawing.Point(104, 57);
-            this.AsignaturatextBox.Name = "AsignaturatextBox";
-            this.AsignaturatextBox.Size = new System.Drawing.Size(259, 20);
-            this.AsignaturatextBox.TabIndex = 2;
             // 
             // Nuevobutton
             // 
@@ -130,16 +123,24 @@
             this.Eliminarbutton.UseVisualStyleBackColor = true;
             this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
+            // AsignaturamaskedTextBox
+            // 
+            this.AsignaturamaskedTextBox.Location = new System.Drawing.Point(104, 57);
+            this.AsignaturamaskedTextBox.Mask = "??????????????????????????????????????????";
+            this.AsignaturamaskedTextBox.Name = "AsignaturamaskedTextBox";
+            this.AsignaturamaskedTextBox.Size = new System.Drawing.Size(255, 20);
+            this.AsignaturamaskedTextBox.TabIndex = 7;
+            // 
             // rAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 161);
+            this.Controls.Add(this.AsignaturamaskedTextBox);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Añadirbutton);
             this.Controls.Add(this.Nuevobutton);
-            this.Controls.Add(this.AsignaturatextBox);
             this.Controls.Add(this.IDnumericUpDown);
             this.Controls.Add(this.Asignaturalabel);
             this.Controls.Add(this.IDlabel);
@@ -158,11 +159,11 @@
         private System.Windows.Forms.Label IDlabel;
         private System.Windows.Forms.NumericUpDown IDnumericUpDown;
         private System.Windows.Forms.Label Asignaturalabel;
-        private System.Windows.Forms.TextBox AsignaturatextBox;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Añadirbutton;
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.MaskedTextBox AsignaturamaskedTextBox;
     }
 }

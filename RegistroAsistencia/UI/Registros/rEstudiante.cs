@@ -24,7 +24,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             MyerrorProvider.Clear();
             IDnumericUpDown.Value = 0;
-            NombrestextBox.Text = string.Empty;
+            NombremaskedTextBox.Text = string.Empty;
         }
 
         private bool Validar()
@@ -32,9 +32,9 @@ namespace RegistroAsistencia.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if (string.IsNullOrWhiteSpace(NombrestextBox.Text))
+            if (string.IsNullOrWhiteSpace(NombremaskedTextBox.Text))
             {
-                MyerrorProvider.SetError(NombrestextBox, "El nombre no puede estar vacío.");
+                MyerrorProvider.SetError(NombremaskedTextBox, "El nombre no puede estar vacío.");
                 paso = false;
             }
 
@@ -45,7 +45,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             Estudiante estudiante = new Estudiante();
             estudiante.EstudianteID = Convert.ToInt32(IDnumericUpDown.Value);
-            estudiante.Nombre = NombrestextBox.Text;
+            estudiante.Nombre = NombremaskedTextBox.Text;
 
             return estudiante;
         }
@@ -53,7 +53,7 @@ namespace RegistroAsistencia.UI.Registros
         private void LlenaCampos(Estudiante e)
         {
             IDnumericUpDown.Value = e.EstudianteID;
-            NombrestextBox.Text = e.Nombre;
+            NombremaskedTextBox.Text = e.Nombre;
         }
 
         private bool Existe()
