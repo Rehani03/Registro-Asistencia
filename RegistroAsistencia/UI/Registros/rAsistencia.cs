@@ -117,15 +117,15 @@ namespace RegistroAsistencia.UI.Registros
             bool paso = true;
             MyerrorProvider.Clear();
 
-            if(AsignaturacomboBox.Text == "")
+            if (AsignaturacomboBox.SelectedIndex == -1)
             {
                 MyerrorProvider.SetError(AsignaturacomboBox, "Debe elegir una asignatura.");
                 paso = false;
             }
 
-            if(EstudiantecomboBox.SelectedIndex == -1)
+            if (AsignaturacomboBox.Text == "")
             {
-                MyerrorProvider.SetError(EstudiantecomboBox, "Debe elegir un estudiante.");
+                MyerrorProvider.SetError(AsignaturacomboBox, "Debe elegir una asignatura.");
                 paso = false;
             }
 
@@ -146,6 +146,11 @@ namespace RegistroAsistencia.UI.Registros
                 try
                 {
                     int cantidad = Convert.ToInt32(CantidadtextBox.Text);
+                    if(cantidad < 0)
+                    {
+                        MyerrorProvider.SetError(CantidadtextBox, "La cantidad debe ser entera, numerica y mayor a cero.");
+                        paso = false;
+                    }
                 }
                 catch (Exception)
                 {
@@ -163,6 +168,11 @@ namespace RegistroAsistencia.UI.Registros
             MyerrorProvider.Clear();
 
             if(EstudiantecomboBox.SelectedIndex == -1)
+            {
+                MyerrorProvider.SetError(EstudiantecomboBox, "Debe elegir al menos un estudiante.");
+                paso = false;
+            }
+            if (EstudiantecomboBox.Text == "")
             {
                 MyerrorProvider.SetError(EstudiantecomboBox, "Debe elegir al menos un estudiante.");
                 paso = false;
@@ -335,8 +345,10 @@ namespace RegistroAsistencia.UI.Registros
         private bool ValidarRemover()
         {
             bool paso = true;
+            
             if (DetalledataGridView.SelectedRows == null)
             {
+                MyerrorProvider.SetError(Removerbutton, "Debe seleccionar al menos una fila.");
                 paso = false;
             }
 
@@ -347,7 +359,9 @@ namespace RegistroAsistencia.UI.Registros
         {
             if (!ValidarRemover())
                 return;
-            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null)
+            int filaDetalle = Convert.ToInt32(DetalledataGridView.CurrentRow.Cells[0].Value);
+
+            if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null && filaDetalle > 0)
             {
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
                 CargarGridFor();

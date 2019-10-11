@@ -46,7 +46,7 @@ namespace RegistroAsistencia.BLL
                 foreach (var item in Anterior.Presentes)
                 {
                     if (!asistencia.Presentes.Exists(d => d.DetalleAsistenciaID == item.DetalleAsistenciaID))
-                        db.Entry(item).State = EntityState.Deleted;
+                        db.Entry(item).State = EntityState.Unchanged;
                 }
                 db.Entry(asistencia).State = EntityState.Modified;
                 flag = (db.SaveChanges() > 0);
