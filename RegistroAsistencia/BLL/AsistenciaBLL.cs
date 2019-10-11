@@ -42,11 +42,14 @@ namespace RegistroAsistencia.BLL
             Contexto db = new Contexto();
             try
             {
-                var Anterior = db.Asistencia.Find(asistencia.AsistenciaID);
+                var Anterior = AsistenciaBLL.Buscar(asistencia.AsistenciaID);
                 foreach (var item in Anterior.Presentes)
                 {
                     if (!asistencia.Presentes.Exists(d => d.DetalleAsistenciaID == item.DetalleAsistenciaID))
-                        db.Entry(item).State = EntityState.Unchanged;
+                    {
+                        db.Entry(item).State = EntityState.Deleted;
+                    }
+                       
                 }
                 db.Entry(asistencia).State = EntityState.Modified;
                 flag = (db.SaveChanges() > 0);
