@@ -36,6 +36,7 @@
             this.Fechalabel = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Removerbutton = new System.Windows.Forms.Button();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.EstudianteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,7 +54,6 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.AgregarAsignaturabutton = new System.Windows.Forms.Button();
-            this.Removerbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AsistenciaIDnumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
@@ -125,6 +125,19 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Asistencia";
+            // 
+            // Removerbutton
+            // 
+            this.Removerbutton.Image = global::RegistroAsistencia.Properties.Resources.cancelar_opt;
+            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Removerbutton.Location = new System.Drawing.Point(12, 267);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(132, 29);
+            this.Removerbutton.TabIndex = 6;
+            this.Removerbutton.Text = "Remover Filas";
+            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
             // DetalledataGridView
             // 
@@ -223,6 +236,7 @@
             // 
             this.CantidadtextBox.Location = new System.Drawing.Point(104, 414);
             this.CantidadtextBox.Name = "CantidadtextBox";
+            this.CantidadtextBox.ReadOnly = true;
             this.CantidadtextBox.Size = new System.Drawing.Size(100, 20);
             this.CantidadtextBox.TabIndex = 10;
             // 
@@ -287,19 +301,6 @@
             this.AgregarAsignaturabutton.TabIndex = 5;
             this.AgregarAsignaturabutton.UseVisualStyleBackColor = true;
             this.AgregarAsignaturabutton.Click += new System.EventHandler(this.AgregarAsignaturabutton_Click);
-            // 
-            // Removerbutton
-            // 
-            this.Removerbutton.Image = global::RegistroAsistencia.Properties.Resources.cancelar_opt;
-            this.Removerbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Removerbutton.Location = new System.Drawing.Point(12, 267);
-            this.Removerbutton.Name = "Removerbutton";
-            this.Removerbutton.Size = new System.Drawing.Size(132, 29);
-            this.Removerbutton.TabIndex = 6;
-            this.Removerbutton.Text = "Remover Filas";
-            this.Removerbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Removerbutton.UseVisualStyleBackColor = true;
-            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
             // 
             // rAsistencia
             // 

@@ -45,7 +45,7 @@
             this.DetalleAsistenciadataGridView.Location = new System.Drawing.Point(12, 12);
             this.DetalleAsistenciadataGridView.Name = "DetalleAsistenciadataGridView";
             this.DetalleAsistenciadataGridView.ReadOnly = true;
-            this.DetalleAsistenciadataGridView.Size = new System.Drawing.Size(624, 265);
+            this.DetalleAsistenciadataGridView.Size = new System.Drawing.Size(624, 277);
             this.DetalleAsistenciadataGridView.TabIndex = 0;
             // 
             // EstudianteIDColumn
@@ -70,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 289);
+            this.ClientSize = new System.Drawing.Size(648, 301);
             this.Controls.Add(this.DetalleAsistenciadataGridView);
             this.MaximizeBox = false;
             this.Name = "cDetalle";

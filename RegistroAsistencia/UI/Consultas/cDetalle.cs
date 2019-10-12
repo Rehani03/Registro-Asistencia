@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RegistroAsistencia.Entidades;
+using RegistroAsistencia.BLL;
 
 namespace RegistroAsistencia.UI.Consultas
 {
@@ -16,5 +18,6 @@ namespace RegistroAsistencia.UI.Consultas
         {
             InitializeComponent();
         }
+
     }
 }

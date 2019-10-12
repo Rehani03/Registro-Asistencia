@@ -16,6 +16,7 @@ namespace RegistroAsistencia.UI.Registros
     public partial class rAsistencia : Form
     {
         public List<DetalleAsistencia> Detalle { get; set; }
+        private int cantidad = 0;
         
         public rAsistencia()
         {
@@ -80,10 +81,9 @@ namespace RegistroAsistencia.UI.Registros
             PresentecheckBox.Checked = false;
             FechadateTimePicker.Value = DateTime.Now;
             CantidadtextBox.Text = string.Empty;
-
+            cantidad = 0;
             this.Detalle = new List<DetalleAsistencia>();
             this.DetalledataGridView.Rows.Clear();
-
         }
 
         private Asistencia LlenaClase()
@@ -106,7 +106,7 @@ namespace RegistroAsistencia.UI.Registros
             AsignaturacomboBox.Text = GetNombreAsignatura(a.AsignaturaID);
             FechadateTimePicker.Value = a.Fecha;
             CantidadtextBox.Text = Convert.ToString(a.Cantidad);
-
+            cantidad = a.Cantidad;
             this.Detalle = a.Presentes;
             CargarGridFor();
            
@@ -135,29 +135,6 @@ namespace RegistroAsistencia.UI.Registros
                 Agregarbutton.Focus();
                 paso = false;
             }
-
-            if (string.IsNullOrWhiteSpace(CantidadtextBox.Text))
-            {
-                MyerrorProvider.SetError(CantidadtextBox, "El campo Cantidad no puede estar vacío.");
-                paso = false;
-            }
-            else
-            {
-                try
-                {
-                    int cantidad = Convert.ToInt32(CantidadtextBox.Text);
-                    if(cantidad < 0)
-                    {
-                        MyerrorProvider.SetError(CantidadtextBox, "La cantidad debe ser entera, numerica y mayor a cero.");
-                        paso = false;
-                    }
-                }
-                catch (Exception)
-                {
-                    MyerrorProvider.SetError(CantidadtextBox, "La cantidad debe ser entera y numerica.");
-                    paso = false;
-                }
-            }     
 
             return paso;
         }
@@ -199,6 +176,7 @@ namespace RegistroAsistencia.UI.Registros
             bool flag;
             this.DetalledataGridView.DataSource = null;
             this.DetalledataGridView.Rows.Clear();
+            cantidad = 0;
             foreach (var item in this.Detalle)
             {
                 if (item.Presente == 1)
@@ -206,7 +184,10 @@ namespace RegistroAsistencia.UI.Registros
                 else
                     flag = false;
                 this.DetalledataGridView.Rows.Add(item.EstudianteID, item.Nombres, flag);
+               
+                cantidad++;
             }
+            CantidadtextBox.Text = Convert.ToString(cantidad);
 
         }
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -251,7 +232,8 @@ namespace RegistroAsistencia.UI.Registros
                         Presente: VerificarCheckBox()
                     )
              );
-
+            cantidad++;
+            CantidadtextBox.Text = Convert.ToString(cantidad);
             CargarGrid();
             MyerrorProvider.Clear();
             PresentecheckBox.Checked = false;
@@ -364,6 +346,8 @@ namespace RegistroAsistencia.UI.Registros
             if (DetalledataGridView.Rows.Count > 0 && DetalledataGridView.CurrentRow != null && filaDetalle > 0)
             {
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+                cantidad--;
+                CantidadtextBox.Text = Convert.ToString(cantidad);
                 CargarGridFor();
             }
         }
