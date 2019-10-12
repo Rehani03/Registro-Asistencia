@@ -155,6 +155,19 @@ namespace RegistroAsistencia.UI.Registros
                 paso = false;
             }
 
+            if (paso)
+            {
+                foreach (var item in this.Detalle)
+                {
+                    if(item.EstudianteID == (int)EstudiantecomboBox.SelectedValue)
+                    {
+                        MyerrorProvider.SetError(EstudiantecomboBox, "Ya el Estudiante existe en el detalle.");
+                        return paso = false;
+                    }
+
+                }
+            }
+
             return paso;
         }
 
