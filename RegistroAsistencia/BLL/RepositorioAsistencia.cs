@@ -10,31 +10,15 @@ using System.Data.Entity;
 
 namespace RegistroAsistencia.BLL
 {
-    public class AsistenciaBLL
+    public class RepositorioAsistencia : RepositorioBase<Asistencia>
     {
-        public static bool Guardar(Asistencia asistencia)
+        public override bool Guardar(Asistencia asistencia)
         {
             bool flag = false;
             Contexto db = new Contexto();
            
-
             try
             {
-
-                //var lista = db.Estudiante.ToList();
-                //var listaAsistencia = db.Asistencia.ToList();
-
-                //foreach (var item in listaAsistencia)
-                //{
-                //    foreach (var detalle in item.Presentes)
-                //    {
-                //        if(detalle.Presente == 1)
-                //        {
-                //            lista.Single(e => e.EstudianteID == detalle.EstudianteID).Presente += 1;
-                //        }
-
-                //    }
-                //}
 
                 foreach (var item in asistencia.Presentes)
                 {
@@ -61,13 +45,15 @@ namespace RegistroAsistencia.BLL
             return flag;
         }
 
-        public static bool Modificar(Asistencia asistencia)
+        public override bool Modificar(Asistencia asistencia)
         {
             bool flag = false;
             Contexto db = new Contexto();
+            RepositorioBase<Asistencia> repositorio = new RepositorioBase<Asistencia>();
+
             try
             {
-                var Anterior = AsistenciaBLL.Buscar(asistencia.AsistenciaID);
+                var Anterior = repositorio.Buscar(asistencia.AsistenciaID);
                 foreach (var item in Anterior.Presentes)
                 {
                     var estudiante = db.Estudiante.Find(item.EstudianteID);
@@ -99,7 +85,7 @@ namespace RegistroAsistencia.BLL
         }
 
         //este metodo elimina el estudiante de la base de datos
-        public static bool Eliminar(int id)
+        /*public static bool Eliminar(int id)
         {
             bool flag = false;
             Contexto db = new Contexto();
@@ -174,7 +160,7 @@ namespace RegistroAsistencia.BLL
                 db.Dispose();
             }
             return Lista;
-        }
+        }*/
 
 
 

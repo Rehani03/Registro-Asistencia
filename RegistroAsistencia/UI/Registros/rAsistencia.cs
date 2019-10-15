@@ -223,7 +223,8 @@ namespace RegistroAsistencia.UI.Registros
 
         private bool Existe()
         {
-            Asistencia asistencia = AsistenciaBLL.Buscar((int)AsistenciaIDnumericUpDown.Value);
+            RepositorioBase<Asistencia> repositorio = new RepositorioBase<Asistencia>();
+            Asistencia asistencia = repositorio.Buscar((int)AsistenciaIDnumericUpDown.Value);
             return (asistencia != null);
         }
 
@@ -234,10 +235,12 @@ namespace RegistroAsistencia.UI.Registros
 
             bool paso;
             Asistencia asistencia;
+            RepositorioAsistencia repositorio = new RepositorioAsistencia();
+
             asistencia = LlenaClase();
 
             if(AsistenciaIDnumericUpDown.Value == 0)
-                paso = AsistenciaBLL.Guardar(asistencia);
+                paso = repositorio.Guardar(asistencia);
             else
             {
                 if (!Existe())
@@ -246,7 +249,7 @@ namespace RegistroAsistencia.UI.Registros
                            "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                paso = AsistenciaBLL.Modificar(asistencia);
+                paso = repositorio.Modificar(asistencia);
             }
 
             if (paso)
@@ -264,8 +267,8 @@ namespace RegistroAsistencia.UI.Registros
         {
             int ID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
             Asistencia asistencia;
-
-            asistencia = AsistenciaBLL.Buscar(ID);
+            RepositorioBase<Asistencia> repositorio = new RepositorioBase<Asistencia>();
+            asistencia = repositorio.Buscar(ID);
             
             if (asistencia != null)
             {
@@ -283,6 +286,7 @@ namespace RegistroAsistencia.UI.Registros
             MyerrorProvider.Clear();
             int ID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
             bool paso;
+            RepositorioBase<Asistencia> repositorio = new RepositorioBase<Asistencia>();
 
             if (!Existe())
             {
@@ -290,7 +294,7 @@ namespace RegistroAsistencia.UI.Registros
             }
             else
             {
-                paso = AsistenciaBLL.Eliminar(ID);
+                paso = repositorio.Eliminar(ID);
                 if (paso)
                 {
                     LimpiarCampos();

@@ -14,7 +14,7 @@ namespace RegistroAsistencia.UI.Consultas
 {
     public partial class cAsistencia : Form
     {
-       
+        RepositorioBase<Asistencia> repositorio;
         public cAsistencia()
         {
             InitializeComponent();
@@ -24,25 +24,26 @@ namespace RegistroAsistencia.UI.Consultas
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
             var listado = new List<Asistencia>();
+            repositorio = new RepositorioBase<Asistencia>();
 
             if(CriteriotextBox.Text.Trim().Length > 0)
             {
                 switch (FiltrocomboBox.SelectedIndex)
                 {
                     case 0: //Todo
-                        listado = AsistenciaBLL.GetList(p => true);
+                        listado = repositorio.GetList(p => true);
                         break;
                     case 1: //ID
                         int ID = GetCriterio();
-                        listado = AsistenciaBLL.GetList(p => p.AsistenciaID == ID);
+                        listado = repositorio.GetList(p => p.AsistenciaID == ID);
                         break;
                     case 2: //ID Asignatura
                         int IDAsignatura = GetCriterio();
-                        listado = AsistenciaBLL.GetList(p => p.AsignaturaID == IDAsignatura);
+                        listado = repositorio.GetList(p => p.AsignaturaID == IDAsignatura);
                         break;
                     case 3: //Cantidad
                         int Cantidad = GetCriterio();
-                        listado = AsistenciaBLL.GetList(p => p.AsignaturaID == Cantidad);
+                        listado = repositorio.GetList(p => p.AsignaturaID == Cantidad);
                         break;
                     default:
                         MessageBox.Show("No existe esa opción en el filtro.", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -53,7 +54,7 @@ namespace RegistroAsistencia.UI.Consultas
             }
             else
             {
-                listado = AsistenciaBLL.GetList(p => true);
+                listado = repositorio.GetList(p => true);
             }
 
             ConsultadataGridView.DataSource = null;
@@ -80,9 +81,10 @@ namespace RegistroAsistencia.UI.Consultas
 
         private void ConsultadataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            repositorio = new RepositorioBase<Asistencia>();
             int ID = Convert.ToInt32(ConsultadataGridView.CurrentRow.Cells[0].Value);
             List<DetalleAsistencia> dt = new List<DetalleAsistencia>();
-            Asistencia asistencia = AsistenciaBLL.Buscar(ID);
+            Asistencia asistencia = repositorio.Buscar(ID);
             cDetalle detalle = new cDetalle();
            
             dt = asistencia.Presentes;
