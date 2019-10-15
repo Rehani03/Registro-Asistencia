@@ -60,7 +60,7 @@
             // registrarAsistenciaToolStripMenuItem
             // 
             this.registrarAsistenciaToolStripMenuItem.Name = "registrarAsistenciaToolStripMenuItem";
-            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
+            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarAsistenciaToolStripMenuItem.Text = "Registrar Asistencia";
             this.registrarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarAsistenciaToolStripMenuItem_Click);
             // 
@@ -94,6 +94,7 @@
             this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(608, 323);
             this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Menu Principal";

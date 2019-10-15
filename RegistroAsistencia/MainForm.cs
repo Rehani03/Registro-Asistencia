@@ -22,18 +22,21 @@ namespace RegistroAsistencia
         private void RegistrarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             rAsistencia asistencia = new rAsistencia();
+            asistencia.MdiParent = this;
             asistencia.Show();
         }
 
         private void ConsultarAsistenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cAsistencia asistencia = new cAsistencia();
+            asistencia.MdiParent = this;
             asistencia.Show();
         }
 
         private void ConsultarEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             cEstudiante estudiante = new cEstudiante();
+            estudiante.MdiParent = this;
             estudiante.Show();
         }
     }
