@@ -39,7 +39,7 @@ namespace RegistroAsistencia.BLL
                 foreach (var item in asistencia.Presentes)
                 {
                     var estudiante = db.Estudiante.Find(item.EstudianteID);
-                    if (item.Presente == 1)
+                    if(item.Presente)
                       estudiante.Presente += 1;
                     else
                         estudiante.Ausente += 1;

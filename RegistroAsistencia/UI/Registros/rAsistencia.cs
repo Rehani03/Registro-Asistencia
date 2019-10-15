@@ -83,7 +83,7 @@ namespace RegistroAsistencia.UI.Registros
             CantidadtextBox.Text = string.Empty;
             cantidad = 0;
             this.Detalle = new List<DetalleAsistencia>();
-            this.DetalledataGridView.Rows.Clear();
+            CargarGrid();
         }
 
         private Asistencia LlenaClase()
@@ -93,7 +93,7 @@ namespace RegistroAsistencia.UI.Registros
             asistencia.AsistenciaID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
             asistencia.AsignaturaID = (int)AsignaturacomboBox.SelectedValue;
             asistencia.Fecha = FechadateTimePicker.Value;
-            asistencia.Cantidad = Convert.ToInt32(CantidadtextBox.Text);
+            asistencia.Cantidad = Convert.ToInt32(DetalledataGridView.Rows.Count);
 
             asistencia.Presentes = this.Detalle;
 
@@ -105,10 +105,10 @@ namespace RegistroAsistencia.UI.Registros
             AsistenciaIDnumericUpDown.Value = a.AsistenciaID;
             AsignaturacomboBox.Text = GetNombreAsignatura(a.AsignaturaID);
             FechadateTimePicker.Value = a.Fecha;
-            CantidadtextBox.Text = Convert.ToString(a.Cantidad);
-            cantidad = a.Cantidad;
+            CantidadtextBox.Text = Convert.ToString(a.Presentes.Count);
+            cantidad = a.Presentes.Count;
             this.Detalle = a.Presentes;
-            CargarGridFor();
+            CargarGrid();
            
         }
 
@@ -173,53 +173,20 @@ namespace RegistroAsistencia.UI.Registros
 
         private void CargarGrid()
         {
-            bool flag;
-
-            if (VerificarCheckBox() == 1)
-                flag = true;
-            else
-                flag = false;
-
-            this.DetalledataGridView.DataSource = null;
-            this.DetalledataGridView.Rows.Add((int)EstudiantecomboBox.SelectedValue, GetNombreEstudiante(), flag);
+            DetalledataGridView.DataSource = null;
+            DetalledataGridView.DataSource = this.Detalle;
+            DetalledataGridView.Columns["DetalleAsistenciaID"].Visible = false;
+            DetalledataGridView.Columns["AsistenciaID"].Visible = false;
+            
         }
 
-        private void CargarGridFor()
-        {
-            bool flag;
-            this.DetalledataGridView.DataSource = null;
-            this.DetalledataGridView.Rows.Clear();
-            cantidad = 0;
-            foreach (var item in this.Detalle)
-            {
-                if (item.Presente == 1)
-                    flag = true;
-                else
-                    flag = false;
-                this.DetalledataGridView.Rows.Add(item.EstudianteID, item.Nombres, flag);
-               
-                cantidad++;
-            }
-            CantidadtextBox.Text = Convert.ToString(cantidad);
-
-        }
+        
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
             
         }
-
-        private int VerificarCheckBox()
-        {
-            int paso;
-
-            if (PresentecheckBox.Checked == true)
-                return paso = 1;
-            else
-                return paso = 0;
-        }
-
-       
+        
         private string GetNombreEstudiante()
         {
             string nombre = "";
@@ -228,17 +195,6 @@ namespace RegistroAsistencia.UI.Registros
             nombre = repositorio.Buscar((int)EstudiantecomboBox.SelectedValue).Nombre;
 
             return nombre;
-        }
-
-        private List<DetalleAsistencia> GetList()
-        {
-            List<DetalleAsistencia> lista = new List<DetalleAsistencia>();
-            foreach (var item in this.Detalle)
-            {
-                MessageBox.Show(item.Nombres);
-                lista.Add(item);
-            }
-            return lista;
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
@@ -253,12 +209,12 @@ namespace RegistroAsistencia.UI.Registros
                         AsistenciaID: Convert.ToInt32(AsistenciaIDnumericUpDown.Value),
                         EstudianteID: (int)EstudiantecomboBox.SelectedValue,
                         Nombres: GetNombreEstudiante(),
-                        Presente: VerificarCheckBox()
+                        Presente: PresentecheckBox.Checked
                     )
              );
             cantidad++;
             CantidadtextBox.Text = Convert.ToString(cantidad);
-            CargarGridFor();
+            CargarGrid();
             MyerrorProvider.Clear();
             PresentecheckBox.Checked = false;
             EstudiantecomboBox.Text = string.Empty;
@@ -295,7 +251,6 @@ namespace RegistroAsistencia.UI.Registros
 
             if (paso)
             {
-                GetList();
                 LimpiarCampos();
                 MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -373,7 +328,7 @@ namespace RegistroAsistencia.UI.Registros
                 this.Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
                 cantidad--;
                 CantidadtextBox.Text = Convert.ToString(cantidad);
-                CargarGridFor();
+                CargarGrid();
             }
         }
     }

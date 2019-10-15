@@ -38,9 +38,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Removerbutton = new System.Windows.Forms.Button();
             this.DetalledataGridView = new System.Windows.Forms.DataGridView();
-            this.EstudianteID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Presentes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Agregarbutton = new System.Windows.Forms.Button();
             this.AgregarEstudiantebutton = new System.Windows.Forms.Button();
             this.PresentecheckBox = new System.Windows.Forms.CheckBox();
@@ -142,35 +139,11 @@
             // DetalledataGridView
             // 
             this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DetalledataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EstudianteID,
-            this.NombreColumn,
-            this.Presentes});
             this.DetalledataGridView.Location = new System.Drawing.Point(12, 88);
             this.DetalledataGridView.Name = "DetalledataGridView";
             this.DetalledataGridView.ReadOnly = true;
             this.DetalledataGridView.Size = new System.Drawing.Size(400, 172);
             this.DetalledataGridView.TabIndex = 5;
-            // 
-            // EstudianteID
-            // 
-            this.EstudianteID.HeaderText = "EstudianteID";
-            this.EstudianteID.Name = "EstudianteID";
-            this.EstudianteID.ReadOnly = true;
-            // 
-            // NombreColumn
-            // 
-            this.NombreColumn.HeaderText = "Nombres";
-            this.NombreColumn.Name = "NombreColumn";
-            this.NombreColumn.ReadOnly = true;
-            this.NombreColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.NombreColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Presentes
-            // 
-            this.Presentes.HeaderText = "Presentes";
-            this.Presentes.Name = "Presentes";
-            this.Presentes.ReadOnly = true;
             // 
             // Agregarbutton
             // 
@@ -357,9 +330,6 @@
         private System.Windows.Forms.ErrorProvider MyerrorProvider;
         private System.Windows.Forms.TextBox CantidadtextBox;
         private System.Windows.Forms.Label Cantidadlabel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EstudianteID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Presentes;
         private System.Windows.Forms.Button Removerbutton;
     }
 }
