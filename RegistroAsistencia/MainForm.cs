@@ -30,5 +30,11 @@ namespace RegistroAsistencia
             cAsistencia asistencia = new cAsistencia();
             asistencia.Show();
         }
+
+        private void ConsultarEstudianteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cEstudiante estudiante = new cEstudiante();
+            estudiante.Show();
+        }
     }
 }

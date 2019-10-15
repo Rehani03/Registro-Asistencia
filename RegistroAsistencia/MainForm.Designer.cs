@@ -33,6 +33,7 @@
             this.registrarAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarAsistenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarEstudianteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,14 +60,15 @@
             // registrarAsistenciaToolStripMenuItem
             // 
             this.registrarAsistenciaToolStripMenuItem.Name = "registrarAsistenciaToolStripMenuItem";
-            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.registrarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.registrarAsistenciaToolStripMenuItem.Text = "Registrar Asistencia";
             this.registrarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.RegistrarAsistenciaToolStripMenuItem_Click);
             // 
             // consultasToolStripMenuItem
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consultarAsistenciaToolStripMenuItem});
+            this.consultarAsistenciaToolStripMenuItem,
+            this.consultarEstudianteToolStripMenuItem});
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
             this.consultasToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.consultasToolStripMenuItem.Text = "Consultas";
@@ -74,9 +76,16 @@
             // consultarAsistenciaToolStripMenuItem
             // 
             this.consultarAsistenciaToolStripMenuItem.Name = "consultarAsistenciaToolStripMenuItem";
-            this.consultarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.consultarAsistenciaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.consultarAsistenciaToolStripMenuItem.Text = "Consultar Asistencia";
             this.consultarAsistenciaToolStripMenuItem.Click += new System.EventHandler(this.ConsultarAsistenciaToolStripMenuItem_Click);
+            // 
+            // consultarEstudianteToolStripMenuItem
+            // 
+            this.consultarEstudianteToolStripMenuItem.Name = "consultarEstudianteToolStripMenuItem";
+            this.consultarEstudianteToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.consultarEstudianteToolStripMenuItem.Text = "Consultar Estudiante";
+            this.consultarEstudianteToolStripMenuItem.Click += new System.EventHandler(this.ConsultarEstudianteToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -102,6 +111,7 @@
         private System.Windows.Forms.ToolStripMenuItem registrarAsistenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarAsistenciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarEstudianteToolStripMenuItem;
     }
 }
 
