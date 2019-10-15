@@ -230,10 +230,21 @@ namespace RegistroAsistencia.UI.Registros
             return nombre;
         }
 
+        private List<DetalleAsistencia> GetList()
+        {
+            List<DetalleAsistencia> lista = new List<DetalleAsistencia>();
+            foreach (var item in this.Detalle)
+            {
+                MessageBox.Show(item.Nombres);
+                lista.Add(item);
+            }
+            return lista;
+        }
+
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            if (DetalledataGridView.DataSource != null)
-                this.Detalle = (List<DetalleAsistencia>)DetalledataGridView.DataSource;
+           if (DetalledataGridView.DataSource != null)
+            this.Detalle = (List<DetalleAsistencia>)DetalledataGridView.DataSource;
             if (!ValidarAgregar())
                 return;
             this.Detalle.Add(
@@ -247,7 +258,7 @@ namespace RegistroAsistencia.UI.Registros
              );
             cantidad++;
             CantidadtextBox.Text = Convert.ToString(cantidad);
-            CargarGrid();
+            CargarGridFor();
             MyerrorProvider.Clear();
             PresentecheckBox.Checked = false;
             EstudiantecomboBox.Text = string.Empty;
@@ -284,6 +295,7 @@ namespace RegistroAsistencia.UI.Registros
 
             if (paso)
             {
+                GetList();
                 LimpiarCampos();
                 MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

@@ -9,9 +9,7 @@ namespace RegistroAsistencia.Entidades
 {
     public class Estudiante
     {
-        private int estudianteID;
-        private string nombre;
-
+  
         public Estudiante()
         {
 
@@ -20,5 +18,7 @@ namespace RegistroAsistencia.Entidades
         [Key]
         public int EstudianteID { get; set; }
         public string Nombre { get; set; }
+        public int Presente { get; set; }
+        public int Ausente { get; set; }
     }
 }

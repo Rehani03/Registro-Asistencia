@@ -16,10 +16,35 @@ namespace RegistroAsistencia.BLL
         {
             bool flag = false;
             Contexto db = new Contexto();
-
+           
 
             try
             {
+
+                //var lista = db.Estudiante.ToList();
+                //var listaAsistencia = db.Asistencia.ToList();
+
+                //foreach (var item in listaAsistencia)
+                //{
+                //    foreach (var detalle in item.Presentes)
+                //    {
+                //        if(detalle.Presente == 1)
+                //        {
+                //            lista.Single(e => e.EstudianteID == detalle.EstudianteID).Presente += 1;
+                //        }
+
+                //    }
+                //}
+
+                foreach (var item in asistencia.Presentes)
+                {
+                    var estudiante = db.Estudiante.Find(item.EstudianteID);
+                    if (item.Presente == 1)
+                      estudiante.Presente += 1;
+                    else
+                        estudiante.Ausente += 1;
+                }
+
                 if (db.Asistencia.Add(asistencia) != null)
                     flag = db.SaveChanges() > 0;
             }
@@ -51,6 +76,7 @@ namespace RegistroAsistencia.BLL
                     }
                        
                 }
+
                 db.Entry(asistencia).State = EntityState.Modified;
                 flag = (db.SaveChanges() > 0);
             }
