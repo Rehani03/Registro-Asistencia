@@ -70,8 +70,14 @@ namespace RegistroAsistencia.BLL
                 var Anterior = AsistenciaBLL.Buscar(asistencia.AsistenciaID);
                 foreach (var item in Anterior.Presentes)
                 {
+                    var estudiante = db.Estudiante.Find(item.EstudianteID);
                     if (!asistencia.Presentes.Exists(d => d.DetalleAsistenciaID == item.DetalleAsistenciaID))
                     {
+                        if (item.Presente)
+                            estudiante.Presente -= 1;
+                        else
+                            estudiante.Ausente -= 1;
+
                         db.Entry(item).State = EntityState.Deleted;
                     }
                        
