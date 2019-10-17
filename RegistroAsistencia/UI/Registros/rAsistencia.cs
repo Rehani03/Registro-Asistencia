@@ -86,15 +86,20 @@ namespace RegistroAsistencia.UI.Registros
             CargarGrid();
         }
 
+        private void CargarDetalleConGrid()
+        {
+            this.Detalle = (List<DetalleAsistencia>)DetalledataGridView.DataSource;
+        }
+
         private Asistencia LlenaClase()
         {
             Asistencia asistencia = new Asistencia();
-
+            
             asistencia.AsistenciaID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
             asistencia.AsignaturaID = (int)AsignaturacomboBox.SelectedValue;
             asistencia.Fecha = FechadateTimePicker.Value;
             asistencia.Cantidad = Convert.ToInt32(DetalledataGridView.Rows.Count);
-
+            CargarDetalleConGrid();
             asistencia.Presentes = this.Detalle;
 
             return asistencia;

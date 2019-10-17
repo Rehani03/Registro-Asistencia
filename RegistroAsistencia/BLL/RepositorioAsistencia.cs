@@ -53,6 +53,7 @@ namespace RegistroAsistencia.BLL
 
             try
             {
+                //aqui elimino los estudiantes que tal vez removieron del detalle y lo disminuyo en la tabla estudiante
                 var Anterior = repositorio.Buscar(asistencia.AsistenciaID);
                 foreach (var item in Anterior.Presentes)
                 {
@@ -67,6 +68,31 @@ namespace RegistroAsistencia.BLL
                         db.Entry(item).State = EntityState.Deleted;
                     }
                        
+                }
+
+                //aqui verifico si un estudiante le cambiaron de presente a ausente o viceversa
+                foreach (var item in Anterior.Presentes)
+                {
+                    var estudiante = db.Estudiante.Find(item.EstudianteID);
+                    foreach (var listaDetalle in asistencia.Presentes)
+                    {
+                        if(item.EstudianteID == listaDetalle.EstudianteID)
+                        {
+                            if(item.Presente == true && listaDetalle.Presente == false)
+                            {
+                                estudiante.Presente -= 1;
+                                estudiante.Ausente += 1;
+                                db.Entry(listaDetalle).State = EntityState.Modified;
+                            }
+                            if (item.Presente == false && listaDetalle.Presente == true)
+                            {
+                                estudiante.Presente += 1;
+                                estudiante.Ausente -= 1;
+                                db.Entry(listaDetalle).State = EntityState.Modified;
+                            }
+
+                        }
+                    }
                 }
 
                 db.Entry(asistencia).State = EntityState.Modified;
