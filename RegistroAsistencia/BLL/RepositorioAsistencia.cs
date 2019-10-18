@@ -132,10 +132,10 @@ namespace RegistroAsistencia.BLL
                 db.Dispose();
             }
             return flag;
-        }
+        }*/
 
         //este metodo busca el estudiante de la base de datos
-        public static Asistencia Buscar(int id)
+        public override Asistencia Buscar(int id)
         {
             Asistencia asistencia = new Asistencia();
             Contexto db = new Contexto();
@@ -167,7 +167,7 @@ namespace RegistroAsistencia.BLL
             return asistencia;
         }
 
-        public static List<Asistencia> GetList(Expression<Func<Asistencia, bool>> asistencia)
+       /* public static List<Asistencia> GetList(Expression<Func<Asistencia, bool>> asistencia)
         {
             List<Asistencia> Lista = new List<Asistencia>();
 

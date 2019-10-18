@@ -272,7 +272,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             int ID = Convert.ToInt32(AsistenciaIDnumericUpDown.Value);
             Asistencia asistencia;
-            RepositorioBase<Asistencia> repositorio = new RepositorioBase<Asistencia>();
+            RepositorioAsistencia repositorio = new RepositorioAsistencia();
             asistencia = repositorio.Buscar(ID);
             
             if (asistencia != null)
