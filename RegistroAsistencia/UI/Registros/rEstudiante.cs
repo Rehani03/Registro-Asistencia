@@ -14,7 +14,7 @@ namespace RegistroAsistencia.UI.Registros
 {
     public partial class rEstudiante : Form
     {
-        RepositorioBase<Estudiante> repositorio;
+       
         public rEstudiante()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace RegistroAsistencia.UI.Registros
 
         private bool Existe()
         {
-            repositorio = new RepositorioBase<Estudiante>();
+            RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
             Estudiante e = repositorio.Buscar((int)IDnumericUpDown.Value);
 
             return (e != null);
@@ -72,7 +72,7 @@ namespace RegistroAsistencia.UI.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             bool paso;
-            repositorio = new RepositorioBase<Estudiante>();
+            RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
             Estudiante estudiante;
 
             if (!Validar())
@@ -108,7 +108,7 @@ namespace RegistroAsistencia.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Estudiante>();
+            RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
             Estudiante estudiante;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
             estudiante = repositorio.Buscar(ID);
@@ -128,7 +128,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            repositorio = new RepositorioBase<Estudiante>();
+            RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
 
             if (!Existe())
             {

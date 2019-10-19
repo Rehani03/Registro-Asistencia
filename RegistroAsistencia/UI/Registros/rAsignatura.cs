@@ -14,7 +14,7 @@ namespace RegistroAsistencia.UI.Registros
 {
     public partial class rAsignatura : Form
     {
-        RepositorioBase<Asignatura> repositorio;
+       
         public rAsignatura()
         {
             InitializeComponent();
@@ -63,7 +63,7 @@ namespace RegistroAsistencia.UI.Registros
 
         private bool Existe()
         {
-            repositorio = new RepositorioBase<Asignatura>();
+            RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
             Asignatura asignatura = repositorio.Buscar((int)IDnumericUpDown.Value);
 
             return (asignatura != null);
@@ -71,7 +71,7 @@ namespace RegistroAsistencia.UI.Registros
 
         private void Añadirbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Asignatura>();
+            RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
             Asignatura asignatura;
             bool paso;
 
@@ -108,7 +108,7 @@ namespace RegistroAsistencia.UI.Registros
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            repositorio = new RepositorioBase<Asignatura>();
+            RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
             Asignatura asignatura;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
 
@@ -130,7 +130,7 @@ namespace RegistroAsistencia.UI.Registros
         {
             bool paso;
             int ID = Convert.ToInt32(IDnumericUpDown.Value);
-            repositorio = new RepositorioBase<Asignatura>();
+            RepositorioBase<Asignatura> repositorio = new RepositorioBase<Asignatura>();
 
             if (!Existe())
             {
