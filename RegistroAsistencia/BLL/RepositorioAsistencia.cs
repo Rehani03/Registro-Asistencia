@@ -95,6 +95,17 @@ namespace RegistroAsistencia.BLL
                     }
                 }
 
+                //agregar nuevos detalles o modificarlo
+                foreach (var item in asistencia.Presentes)
+                {
+                    if (item.DetalleAsistenciaID == 0)
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                    else
+                        db.Entry(item).State = EntityState.Modified;
+                }
+
                 db.Entry(asistencia).State = EntityState.Modified;
                 flag = (db.SaveChanges() > 0);
             }
