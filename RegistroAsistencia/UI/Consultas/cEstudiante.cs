@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RegistroAsistencia.Entidades;
 using RegistroAsistencia.BLL;
+using RegistroAsistencia.UI.Reportes;
+using System.Linq.Expressions;
 
 namespace RegistroAsistencia.UI.Consultas
 {
     public partial class cEstudiante : Form
     {
+        private List<Estudiante> lista;
         public cEstudiante()
         {
             InitializeComponent();
@@ -22,8 +25,8 @@ namespace RegistroAsistencia.UI.Consultas
         private void Consultarbutton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Estudiante> repositorio = new RepositorioBase<Estudiante>();
-            List<Estudiante> lista = new List<Estudiante>();
-
+            lista = new List<Estudiante>();
+           
             if(CriteriotextBox.Text.Trim().Length> 0)
             {
                 switch (FiltrocomboBox.SelectedIndex)
@@ -79,5 +82,16 @@ namespace RegistroAsistencia.UI.Consultas
             return ID;
         }
 
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            if(lista.Count == 0)
+            {
+                MessageBox.Show("No hay datos para imprimir", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            Reporte reporte = new Reporte(lista);
+            reporte.ShowDialog();
+
+        }
     }
 }
